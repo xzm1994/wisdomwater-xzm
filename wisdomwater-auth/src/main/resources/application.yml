@@ -1,0 +1,21 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: wisdomwater-auth
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/wisdomwater_user?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+# token过期时间 30分钟
+token:
+  access-expire-second: 1800
