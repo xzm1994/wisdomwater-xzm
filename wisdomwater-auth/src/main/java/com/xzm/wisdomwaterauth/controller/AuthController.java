@@ -27,7 +27,7 @@ public class AuthController {
 
     @PostMapping("/login")
     public R login(@RequestBody LoginDTO dto) {
-        // 账号密码认证
+        // 账号密码认证（传明文，Spring Security 内部自动做密码比对）
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(dto.getUsername(), dto.getPassword())
         );
